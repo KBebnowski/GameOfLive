@@ -90,15 +90,11 @@ public class GameSwing extends ArraySwing implements Game {
                 }
                 if(squares[i][j].getBackground()!= Color.RED && licznik==3){
                     jButtons[i][j].setBackground(Color.RED);//martwa staje sie zywa
-                  //  jPanel.add(jButtons[i][j]);
-                  //  jPanel.repaint();
                 }else if(squares[i][j].getBackground()== Color.RED && (licznik==2 || licznik==3)){
                     licznik=0; //zerujemy tutaj licznik, poniewaz jesli zostanie wywolane continue to wrocimy do poczatku petli i licznik nie zostalby wyzerowany
                     continue;//zywa pozostaje zywa
                 }else{
                     jButtons[i][j].setBackground(Color.BLACK);//zywa staje sie martwa, lub martwa pozostaje martwa
-                   // jPanel.add(jButtons[i][j]);
-                   // jPanel.repaint();
                 }
                 licznik=0; //resetowanie zmiennej dla zbadania nowej komorki
             }

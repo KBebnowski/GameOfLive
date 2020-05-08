@@ -21,7 +21,7 @@ public class GameConsole extends ArrayConsole implements Runnable, Game {
         while (true) {
             try {
                 analize();
-                Thread.sleep(50);
+                Thread.sleep(500);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -53,17 +53,6 @@ public class GameConsole extends ArrayConsole implements Runnable, Game {
     public void analize() {
         int licznik=0; //zmienna odpowiedzialna za stan badanej komorki
         boolean [][]temp = gameArray;
-
-    /*    for (int i=0; i<10; i++){
-
-            if(temp[0][i]==false && licznik==3){
-                array[0][i]=true;//martwa staje sie zywa
-            }else if(temp[0][i]==true && (licznik==2 || licznik==3)){
-                continue;//zywa pozostaje zywa
-            }else{
-                array[0][i]=false;//zywa staje sie martwa, lub martwa pozostaje martwa
-            }
-        }*/
 
         for(int i =1; i<x-1; i++){
             for(int j =1; j<y-1; j++){
