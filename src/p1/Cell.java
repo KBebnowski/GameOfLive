@@ -24,7 +24,18 @@ public class Cell {
     }
 
     public boolean isAlive() {
-        return isAlive;
+
+        //komorka zostanie stworzona jesli po 3 losowaniach bedzie nadal true
+        if (isAlive == true) {
+             isAlive = random.nextBoolean();
+             if(isAlive == true) {
+                 isAlive = random.nextBoolean();
+                 return isAlive;
+             }else
+                 return isAlive;
+        } else {
+            return isAlive;
+        }
     }
 
 }

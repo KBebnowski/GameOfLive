@@ -21,7 +21,7 @@ public class GameConsole extends ArrayConsole implements Runnable, Game {
         while (true) {
             try {
                 analize();
-                Thread.sleep(500);
+                Thread.sleep(50);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -67,33 +67,34 @@ public class GameConsole extends ArrayConsole implements Runnable, Game {
 
         for(int i =1; i<x-1; i++){
             for(int j =1; j<y-1; j++){
-                if(temp[i-1][j-1]==true){
+                if((temp[i-1][j-1])==true){
                     licznik++;
                 }
-                if(temp[i][j-1]==true){
+                if((temp[i][j-1])==true){
                     licznik++;
                 }
-                if(temp[i+1][j-1]==true){
+                if((temp[i+1][j-1])==true){
                     licznik++;
                 }
-                if(temp[i-1][j]==true){
+                if((temp[i-1][j])==true){
                     licznik++;
                 }
-                if(temp[i+1][j]==true){
+                if((temp[i+1][j])==true){
                     licznik++;
                 }
-                if(temp[i-1][j+1]==true){
+                if((temp[i-1][j+1])==true){
                     licznik++;
                 }
-                if(temp[i][j+1]==true){
+                if((temp[i][j+1])==true){
                     licznik++;
                 }
-                if(temp[i+1][j+1]==true){
+                if((temp[i+1][j+1])==true){
                     licznik++;
                 }
-                if(temp[i][j]==false && licznik==3){
+                if(temp[i][j]==false && (licznik==3)){
                     gameArray[i][j]=true;//martwa staje sie zywa
                 }else if(temp[i][j]==true && (licznik==2 || licznik==3)){
+                    licznik=0; // zerujemy tutaj licznik, poniewaz jesli zostanie wywolane continue to wrocimy do poczatku petli i licznik nie zostalby wyzerowany
                     continue;//zywa pozostaje zywa
                 }else{
                     gameArray[i][j]=false;//zywa staje sie martwa, lub martwa pozostaje martwa

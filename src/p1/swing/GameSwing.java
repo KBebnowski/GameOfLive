@@ -18,7 +18,7 @@ public class GameSwing extends ArraySwing implements Game {
 
 
     private Timer timer;  //zmienna, ktora jest odpowiedzialna za wyzwalanie co okreslony czas metody ActionPerformed
-    private int time_delay = 100; //czas co ile uruchamiana jest metoda ActionPerformed
+    private int time_delay = 10; //czas co ile uruchamiana jest metoda ActionPerformed
 
     private JButton [][] jButtons = addArray(); //przypisanie do Tablicy Buttonow tablicy obiektu arraySwing
 
@@ -93,6 +93,7 @@ public class GameSwing extends ArraySwing implements Game {
                   //  jPanel.add(jButtons[i][j]);
                   //  jPanel.repaint();
                 }else if(squares[i][j].getBackground()== Color.RED && (licznik==2 || licznik==3)){
+                    licznik=0; //zerujemy tutaj licznik, poniewaz jesli zostanie wywolane continue to wrocimy do poczatku petli i licznik nie zostalby wyzerowany
                     continue;//zywa pozostaje zywa
                 }else{
                     jButtons[i][j].setBackground(Color.BLACK);//zywa staje sie martwa, lub martwa pozostaje martwa
